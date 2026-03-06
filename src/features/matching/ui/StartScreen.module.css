@@ -1,0 +1,223 @@
+/* CSS variable shared by panel and map for guaranteed alignment */
+:root {
+  --map-width: min(95vw, 1200px, calc(75vh * 1.5));
+}
+
+/* Reset body */
+:global(body) {
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.5s ease;
+}
+
+/* Full-screen wrapper */
+.controlPanelWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Control Panel — sits flush above the map, same width */
+.controlPanel {
+  width: var(--map-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 0;
+  box-sizing: border-box;
+}
+
+/* Stage Navigation pill */
+.navGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.mapTitle {
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  min-width: clamp(100px, 15vw, 180px);
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+
+.navBtn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.navBtn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Logout Button */
+.logoutBtn {
+  background: rgba(255, 107, 107, 0.9);
+  color: white;
+  border: 3px solid white;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.logoutBtn:hover {
+  background: rgba(255, 80, 80, 1);
+}
+
+/* Map wrapper */
+.mapContentWrapper {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Map container */
+.mapContainer {
+  position: relative;
+  width: var(--map-width);
+  aspect-ratio: 3 / 2;
+  background-image: url("../../../assets/map-background.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: min(4vw, 40px);
+  box-shadow: 0 min(3vw, 30px) min(6vw, 60px) rgba(0, 0, 0, 0.4);
+  border: min(1vw, 10px) solid white;
+}
+
+/* === Language toggle button === */
+.langToggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  max-width: 52px;
+  max-height: 52px;
+  border-radius: 50%;
+  border: 3px solid white;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden; /* clips flag to the circle */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.langToggle:hover {
+  transform: scale(1.08);
+}
+
+/* === Flag icons === */
+.levelFlags {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.flag {
+  transition:
+    transform 0.2s,
+    filter 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flag:hover {
+  transform: translate(-50%, -100%) scale(1.1);
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.flag:hover .iconWrapper {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.levelNumber {
+  position: absolute;
+  top: 35%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  font-size: min(2.5vw, 18px);
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  font-size: min(1.8vw, 16px);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.flagIcon {
+  width: min(8vw, 60px);
+  height: min(8vw, 60px);
+}
+
+/* === Responsive mobile === */
+@media (max-width: 600px) {
+  .controlPanel {
+    padding: 12px 0;
+    gap: 10px;
+  }
+
+  .navGroup {
+    padding: 4px 10px;
+    gap: 4px;
+  }
+
+  .navBtn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .logoutBtn {
+    padding: 7px 14px;
+  }
+}

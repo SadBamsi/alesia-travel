@@ -1,0 +1,46 @@
+.scoreBoard {
+  display: flex;
+  gap: 2rem;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 4px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.scoreItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.value {
+  font-size: 2.25rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.correct {
+  color: #10b981;
+}
+
+.wrong {
+  color: #ef4444;
+}
+
+.divider {
+  width: 2px;
+  background-color: #e5e7eb;
+  align-self: stretch;
+}

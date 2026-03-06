@@ -1,0 +1,23 @@
+.positioner {
+  width: 12rem;
+  height: 12rem;
+  pointer-events: none;
+  z-index: 20;
+  contain: layout style; /* Isolate reflow — drag transforms don't bubble to the grid */
+}
+
+@media screen and (max-width: 768px) {
+  .positioner {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+.positioner > * {
+  pointer-events: auto;
+}
+
+/* Keep previous classes if needed, or clean up */
+.grid {
+  display: hidden; /* No longer a grid */
+}

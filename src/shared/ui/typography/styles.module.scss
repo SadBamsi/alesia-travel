@@ -1,0 +1,10 @@
+.typography {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+
+  &__xl {
+    font-size: 32px;
+    font-weight: 700;
+  }
+}

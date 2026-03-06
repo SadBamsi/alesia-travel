@@ -1,0 +1,108 @@
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+  font-family: "Comic Sans MS", "Chalkboard SE", sans-serif;
+}
+
+.authCard {
+  background: white;
+  border-radius: 40px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 8px solid #ff6b6b;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.title {
+  color: #ff6b6b;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.label {
+  display: block;
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 4px solid #cbd5e1;
+  border-radius: 20px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+}
+
+.button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+  box-shadow: 0 8px 16px rgba(255, 107, 107, 0.3);
+  margin-top: 1rem;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-5px) scale(1.05);
+  background-color: #ff4f4f;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ef4444;
+  background-color: #fee2e2;
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.linkText {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+.link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

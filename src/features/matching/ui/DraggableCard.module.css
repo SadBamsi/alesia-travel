@@ -1,0 +1,53 @@
+.draggableCard {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 4px solid transparent;
+  cursor: grab;
+  touch-action: none;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  overflow: hidden;
+  transition: border-color 0.2s; /* Only non-transform props — transform must NEVER be transitioned during drag */
+  z-index: 10;
+}
+
+.draggableCard:hover {
+  border-color: #60a5fa;
+}
+
+.draggableCard:active {
+  cursor: grabbing;
+}
+
+.dragging {
+  opacity: 0.5;
+  z-index: 50;
+  cursor: grabbing;
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: none; /* Kill ALL transitions while dragging — prevents animation restart on every mousemove */
+}
+
+.image {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: top;
+  pointer-events: none;
+  user-select: none;
+}
+
+.iconWrapper {
+  width: 60%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151; /* Dark gray for icons */
+}
