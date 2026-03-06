@@ -47,6 +47,41 @@
   justify-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+    justify-content: flex-start;
+  }
+
+  .content {
+    gap: 1rem;
+  }
+
+  .gameBoard {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "target-zone target-zone"
+      "top-card left-card"
+      "right-card bottom-card";
+    min-height: auto;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .hint {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .backButton {
+    top: 10px;
+    left: 10px;
+    padding: 6px 12px;
+    font-size: 1rem;
+  }
+}
+
 .backButton {
   position: absolute;
   top: 20px;

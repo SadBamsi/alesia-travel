@@ -44,3 +44,20 @@
   background-color: #e5e7eb;
   align-self: stretch;
 }
+
+@media screen and (max-width: 768px) {
+  .scoreBoard {
+    gap: 1rem;
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem 0 2rem auto;
+    border-width: 3px;
+  }
+
+  .value {
+    font-size: 1.5rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+  }
+}

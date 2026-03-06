@@ -3,13 +3,14 @@
   height: 12rem;
   pointer-events: none;
   z-index: 20;
-  contain: layout style; /* Isolate reflow — drag transforms don't bubble to the grid */
+  contain: layout style;
 }
 
 @media screen and (max-width: 768px) {
   .positioner {
-    width: 10rem;
-    height: 10rem;
+    width: clamp(140px, 42vw, 180px);
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }
 
