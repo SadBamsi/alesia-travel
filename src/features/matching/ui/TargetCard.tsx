@@ -6,10 +6,10 @@ import styles from "./TargetCard.module.css";
 
 interface TargetCardProps {
   item: MatchItem | null;
-  category: string | null;
+  category?: string | null;
 }
 
-export const TargetCard: React.FC<TargetCardProps> = ({ item, category }) => {
+export const TargetCard: React.FC<TargetCardProps> = ({ item }) => {
   const { setNodeRef, isOver } = useDroppable({ id: "target-zone" });
   const languageMode = useGameStore((state) => state.languageMode);
 
